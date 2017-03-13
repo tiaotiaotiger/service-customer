@@ -2,6 +2,8 @@ package com.bocom.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,17 +24,15 @@ public class TestController {
 	@Autowired
 	DataAreaTypeClient client;
 
-	@GetMapping("/listDataByParam")
-	public String listDataByParam(String areaName) {
-		String str = client.listDataByParam(areaName);
-		System.out.println("======" + str);
+	@GetMapping("/listDataByGet")
+	public String listDataByGet(String areaName) {
+		String str = client.listDataByGet(areaName);
 		return str;
 	}
-	
-	@GetMapping("/aaa")
-	public String aaa() {
-		String str = client.aaa();
-		System.out.println("======" + str);
+
+	@PostMapping("/listDataByPost")
+	public String listDataByPost(String areaName) {
+		String str = client.listDataByPost(areaName);
 		return str;
 	}
 }

@@ -13,10 +13,16 @@ import com.bocom.service.DataAreaTypeClient;
  */
 
 @Component
-public class DataAreaTypeHystrix{
+public class DataAreaTypeHystrix implements DataAreaTypeClient{
 
-	public String listDataByParam(String areaName) {
-		return "error";
+	public String listDataByGet(String areaName) {
+		
+		return "listDataByGet error";
+	}
+
+	@Override
+	public String listDataByPost(String areaName) {
+		return "listDataByPost error";
 	}
 
 }
