@@ -15,12 +15,12 @@ import com.bocom.service.hystrix.DataAreaTypeHystrix;
  * @since    JDK 1.7
  */
 
-@FeignClient(value = "service-provider" ,fallback=DataAreaTypeHystrix.class )
+@FeignClient(value = "proxy-gateway", fallback = DataAreaTypeHystrix.class)
 public interface DataAreaTypeClient {
 
-	@RequestMapping(value = "/listDataByGet", method = RequestMethod.GET)
+	@RequestMapping(value = "/dmmpdr/listDataByGet", method = RequestMethod.GET)
 	public String listDataByGet(@RequestParam("areaName") String areaName);
 
-	@RequestMapping(value = "/listDataByPost", method = RequestMethod.POST)
+	@RequestMapping(value = "/dmmpdr/listDataByPost", method = RequestMethod.POST)
 	public String listDataByPost(String areaName);
 }
