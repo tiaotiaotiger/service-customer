@@ -18,9 +18,9 @@ import com.bocom.service.hystrix.DataAreaTypeHystrix;
 @FeignClient(value = "proxy-gateway", fallback = DataAreaTypeHystrix.class)
 public interface DataAreaTypeClient {
 
-	@RequestMapping(value = "/dmmpdr/listDataByGet", method = RequestMethod.GET)
+	@RequestMapping(value = "/test/listDataByGet", method = RequestMethod.GET)
 	public String listDataByGet(@RequestParam("areaName") String areaName);
 
-	@RequestMapping(value = "/dmmpdr/listDataByPost", method = RequestMethod.POST)
+	@RequestMapping(value = "/test/listDataByPost", method = RequestMethod.POST)
 	public String listDataByPost(String areaName);
 }
